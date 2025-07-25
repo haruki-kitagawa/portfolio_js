@@ -1,0 +1,84 @@
+@import "tailwindcss";
+/* @plugin "daisyui"; */
+
+
+body, html{
+    all: unset;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, var(--main-color), var(--sub-color));
+    color: white;
+}
+
+:root {
+    --main-color: rgb(110, 170, 255);
+    --main-color-rgb: 110, 170, 255;
+    --sub-color: rgb(179, 236, 255);
+    --sub-color-rgb: 179, 236, 255;
+    --middle-color: #91bdff;
+}
+
+/* テーマ変数 */
+@layer utilities {
+
+    /* 背景色: 薄赤から白へグラデーション */
+    .bg-primary {
+        background: linear-gradient(to bottom, var(--main-color), var(--sub-color));
+        color: white;
+    }
+
+    .outside-div {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .base-card {
+        min-height: 90vh;
+        width: 80vw;
+        background-color: white;
+        border-radius: 0.75rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        margin: 5vh;
+    }
+
+    .card-container {
+        border-radius: 0.75rem;
+        width: 90%;
+        height: 80vh;
+        position: absolute;
+        top: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        /* border: #ff6e8b 0.1px solid; */
+    }
+
+    .page-title {
+        font-weight: bold;
+        color: var(--main-color);
+        font-size: var(--text-6xl);
+        line-height: var(--tw-leading, var(--text-6xl--line-height));
+        text-shadow: 2px 2px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.15));
+    }
+
+    .button-style {
+        width: fit-content;
+        height: fit-content;
+        margin: 0.25rem;
+        padding-block: 0.75rem;
+        padding-inline: 1.25rem;
+        border-radius: calc(infinity * 1px);
+        transition-property: transform, translate, scale, rotate;
+        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+        transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+}
+
